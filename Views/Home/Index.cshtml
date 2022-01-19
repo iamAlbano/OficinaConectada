@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="background position-relative">
+
+
+<img src="
+https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=996&q=80
+" class="background-img img-fluid" alt="...">
+</div>
+
+<div class="position-absolute top-0 start-50 translate-middle-x">
+<h1 class="headline text-light text-center">Ganhe mais <a class="text-light text-decoration-none headline-tec"> Tecnologia<br /> <a/> na sua oficina.</h1>
+<p class="sub-headline text-light text-center" onclick="contact()">Entre em <a class="text-decoration-none orange-bg">contato</a> saiba mais!</p>
+</div>
+
+<div class="contato"></div>
+<div class="container contact">
+    <h3>Fale Conosco</h3>
+
+    
+    @using(Html.BeginForm("Contact", "Home", FormMethod.Post)){
+
+        <div class="row">
+            <div class="col mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome" name="name" required>
+            </div>
+
+            <div class="col mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-3">
+              <label for="whatsapp" class="form-label">Whatsapp</label>
+              <input type="tel" class="form-control" id="whatsapp" name="phone" onkeypress="$(this).mask('(00) 9 0000-0000')" required>
+            </div>
+
+            <div class="col">
+                <label for="mecanico" class="form-label">Você é mecânico ou proprietário de centro automotivo?</label>
+                <select class="form-select" aria-label="Default select example" id="mechanic" name="mechanic">
+                  <option value="Não" selected>Não</option>
+                  <option value="Sim">Sim</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem</label>
+          <textarea class="form-control" id="mensagem" name="message" rows="3"></textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-lg btn-primary ">Enviar</button>
+        </div>
+        }
+</div>
